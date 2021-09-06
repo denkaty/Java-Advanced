@@ -1,22 +1,20 @@
-package Jar;
+package Jar_01;
 
 import java.util.ArrayDeque;
-import java.util.Deque;
 
 public class Jar<Type> {
-    private Deque<Type> stack;
+    private ArrayDeque<Type> stack;
 
-    public Jar(){
+    public Jar() {
         this.stack = new ArrayDeque<>();
     }
 
-    public void add(Type element){
+    public void add(Type element) {
         this.stack.push(element);
     }
 
     public Type remove(){
-        return this.stack.pop();
+       return this.stack.pop();
     }
-
 
 }
