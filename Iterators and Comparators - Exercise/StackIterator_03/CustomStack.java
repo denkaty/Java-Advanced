@@ -1,0 +1,47 @@
+package StackIterator_03;
+
+import java.util.Iterator;
+
+public class CustomStack implements Iterable<Integer> {
+    private Integer[] integers;
+    private int currentIndex;
+
+    public CustomStack() {
+        this.integers = new Integer[16];
+        this.currentIndex = -1;
+    }
+
+    public void push(Integer... elements) {
+        for (Integer element : elements) {
+            currentIndex++;
+            this.integers[currentIndex] = element;
+        }
+
+    }
+
+    public void pop() {
+        if (currentIndex < 0) {
+            System.out.println("No elements");
+
+        } else {
+            this.integers[currentIndex--] = null;
+        }
+    }
+
+
+    @Override
+    public Iterator<Integer> iterator() {
+        return new Iterator<Integer>() {
+            int index = currentIndex;
+            @Override
+            public boolean hasNext() {
+                return index >= 0;
+            }
+
+            @Override
+            public Integer next() {
+                return integers[index--];
+            }
+        };
+    }
+}
