@@ -11,14 +11,14 @@ public class SumNumbers_02 {
 
         String input = bufferedReader.readLine();
 
-        Function<String, Integer> count = arr -> {
-            int[] numbers = Arrays.stream(arr.split(", ")).mapToInt(Integer::parseInt).toArray();
+        Function<String, Integer> count = string -> {
+            int[] numbers = Arrays.stream(string.split(", ")).mapToInt(Integer::parseInt).toArray();
 
             return numbers.length;
         };
 
-        Function<String, Integer> sum = arr -> {
-            int[] numbers = Arrays.stream(arr.split(", ")).mapToInt(Integer::parseInt).toArray();
+        Function<String, Integer> sum = string -> {
+            int[] numbers = Arrays.stream(string.split(", ")).mapToInt(Integer::parseInt).toArray();
 
             return Arrays.stream(numbers).sum();
         };
